@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_filters',
     'drf_yasg',
+    'corsheaders',
     # local Apps,
     'accounts',
     'articles',
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -149,7 +151,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-# JWT token settings 
+# JWT token settings
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
@@ -163,3 +165,12 @@ STORAGES = {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
     },
 }
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4100",
+    "http://localhost:3000",
+]
+
+# Optionally, you can allow all origins (not recommended for production)
+# CORS_ALLOW_ALL_ORIGINS = True

@@ -18,4 +18,12 @@ python manage.py createsuperuser:
 pass: admin
 Email Address: noumanshah436@gmail.com
 
+**********************************************
 
+
+Frontend 
+
+https://github.com/noumanshah436/react-redux-realworld-example-app
+
+
+**********************************************
